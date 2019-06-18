@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Gradebook;
 
 namespace GradeBook
 {
@@ -6,7 +6,14 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello Leonardo!");
+            var book = new Book("Leonardo's Book");
+
+            book.AddGrade(10.0);
+            book.AddGrade(9.5);
+            book.AddGrade(10.0);
+            book.AddGrade(6.9);
+
+            book.ShowStatistics();
         }
     }
 }
