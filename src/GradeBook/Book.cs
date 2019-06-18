@@ -19,6 +19,17 @@ namespace Gradebook
             this.grades.Add(grade);
         }
 
+        public void ShowStatistics()
+        {
+            var highestGrade = this.GetHighestGrade();
+            var lowestGrade = this.GetLowestGrade();
+            var average = this.GetAverage();
+
+            Console.WriteLine($"The highest grade is {highestGrade}.");
+            Console.WriteLine($"The lowest grade is {lowestGrade}.");
+            Console.WriteLine($"The average grade is {average}.");
+        }
+
         public double GetHighestGrade()
         {
             var highestGrade = double.MinValue;
