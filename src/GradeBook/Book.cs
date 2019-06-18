@@ -30,6 +30,18 @@ namespace Gradebook
 
             return highestGrade;
         }
+
+        public double GetLowestGrade()
+        {
+            var lowestGrade = double.MaxValue;
+
+            foreach (double grade in this.grades) 
+            {
+                lowestGrade = Math.Min(grade, lowestGrade);
+            }
+
+            return lowestGrade;
+        }
     }
 }
 
