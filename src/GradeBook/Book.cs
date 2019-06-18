@@ -42,6 +42,19 @@ namespace Gradebook
 
             return lowestGrade;
         }
+
+        public double GetAverage()
+        {
+            double total = 0.0;
+
+            foreach (double grade in this.grades) {
+                total += grade;
+            }
+
+            var average = total / this.grades.Count;
+
+            return average;
+        }
     }
 }
 
