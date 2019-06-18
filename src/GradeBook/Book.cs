@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace Gradebook
@@ -16,6 +17,18 @@ namespace Gradebook
         public void AddGrade(double grade)
         {
             this.grades.Add(grade);
+        }
+
+        public double GetHighestGrade()
+        {
+            var highestGrade = double.MinValue;
+
+            foreach (double grade in this.grades) 
+            {
+                highestGrade = Math.Max(grade, highestGrade);
+            }
+
+            return highestGrade;
         }
     }
 }
