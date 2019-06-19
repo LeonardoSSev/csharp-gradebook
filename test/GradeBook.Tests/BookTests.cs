@@ -31,5 +31,38 @@ namespace GradeBook.Tests
             Assert.Equal(1, validGrade);
             Assert.Equal(0, invalidGrade);
         }
+
+        [Fact]
+        public void BookGetHigherGrade()
+        {
+            var book = new Book("");
+
+            book.AddGrade(10.0);
+            book.AddGrade(5.0);
+
+            Assert.Equal(10.0, book.GetHighestGrade());
+        }
+        
+        [Fact]
+        public void BookGetLowerGrade()
+        {
+            var book = new Book("");
+
+            book.AddGrade(10.0);
+            book.AddGrade(5.0);
+
+            Assert.Equal(5.0, book.GetLowestGrade());
+        }
+        
+        [Fact]
+        public void BookGetAverageGrade()
+        {
+            var book = new Book("");
+
+            book.AddGrade(10.0);
+            book.AddGrade(5.0);
+
+            Assert.Equal(7.5, book.GetAverage());
+        }
     }
 }
