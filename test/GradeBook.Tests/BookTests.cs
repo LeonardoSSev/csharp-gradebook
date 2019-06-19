@@ -17,7 +17,7 @@ namespace GradeBook.Tests
 
             Assert.Equal(10.0, statistics.High);
             Assert.Equal(5.0, statistics.Low);
-            Assert.Equal(7.5, statistics.High);
+            Assert.Equal(7.5, statistics.Average);
         }
     }
 }
