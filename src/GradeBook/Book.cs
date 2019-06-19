@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using GradeBook;
 
-namespace Gradebook
+namespace GradeBook
 {
-    class Book
+    public class Book
     {
         private List<double> grades;
         private string name;
