@@ -6,15 +6,46 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
-            var book = new Book("Leonardo's Book");
+            var book = Program.CreateBook();
 
-            book.AddGrade(10.0);
-            book.AddGrade(9.5);
-            book.AddGrade(10.0);
-            book.AddGrade(6.9);
-            book.AddLetterGrade('C');
-            book.AddLetterGrade('D');
+            Program.AddGradeIntoBook(book);
 
+            Program.ShowStatistics(book);
+        }
+
+        static Book CreateBook()
+        {
+            Console.WriteLine("Input he name of the book: ");
+            var name = Console.ReadLine();
+            
+            var book = new Book(name);
+
+            return book;
+        }
+
+        static void AddGradeIntoBook(Book book)
+        {
+            
+            int count = 0;
+            do {
+                Console.WriteLine($"Input the grade number {count+1}:");
+                var grade = double.Parse(Console.ReadLine());
+
+                var result = Program.InputGrade(book, grade);
+
+                count++;
+            } while (count < 4);
+        }
+
+        static int InputGrade(Book book, double grade)
+        {
+            var result = book.AddGrade(grade);
+
+            return result;
+        }
+
+        static void ShowStatistics(Book book)
+        {
             var statistics = book.GetStatistics();
 
             Console.WriteLine($"The highest grade is {statistics.High:N1}.");
@@ -23,4 +54,5 @@ namespace GradeBook
             Console.WriteLine($"The letter is {statistics.Letter}.");
         }
     }
+    
 }
