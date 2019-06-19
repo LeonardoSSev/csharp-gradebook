@@ -55,6 +55,7 @@ namespace GradeBook
             statistics.High = this.GetHighestGrade();
             statistics.Low = this.GetLowestGrade();
             statistics.Average = this.GetAverage();
+            statistics.DefineAverageLetter();
 
             return statistics;
         }
