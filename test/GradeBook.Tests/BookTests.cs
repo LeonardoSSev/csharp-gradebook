@@ -19,5 +19,17 @@ namespace GradeBook.Tests
             Assert.Equal(5.0, statistics.Low);
             Assert.Equal(7.5, statistics.Average);
         }
+
+        [Fact]
+        public void BookOnlyAcceptValidGrades()
+        {
+            var book = new Book("");
+
+            var validGrade = book.AddGrade(10.0);
+            var invalidGrade = book.AddGrade(10.1);
+
+            Assert.Equal(1, validGrade);
+            Assert.Equal(0, invalidGrade);
+        }
     }
 }
