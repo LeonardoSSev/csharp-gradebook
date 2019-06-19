@@ -14,9 +14,16 @@ namespace GradeBook
             this.Name = name;
         }
 
-        public void AddGrade(double grade)
+        public int AddGrade(double grade)
         {
+            if (grade < 0.0 || grade > 10.0) {
+                Console.WriteLine("Invalid grade.");
+                return 0;
+            }
+
             this.grades.Add(grade);
+
+            return 1;
         }
 
         public Statistics GetStatistics()
