@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using GradeBook;
 
 namespace Gradebook
 {
@@ -19,15 +20,15 @@ namespace Gradebook
             this.grades.Add(grade);
         }
 
-        public void ShowStatistics()
+        public Statistics GetStatistics()
         {
-            var highestGrade = this.GetHighestGrade();
-            var lowestGrade = this.GetLowestGrade();
-            var average = this.GetAverage();
+            var statistics = new Statistics();
 
-            Console.WriteLine($"The highest grade is {highestGrade}.");
-            Console.WriteLine($"The lowest grade is {lowestGrade}.");
-            Console.WriteLine($"The average grade is {average}.");
+            statistics.Low = this.GetHighestGrade();
+            statistics.High = this.GetLowestGrade();
+            statistics.Average = this.GetAverage();
+
+            return statistics;
         }
 
         public double GetHighestGrade()
