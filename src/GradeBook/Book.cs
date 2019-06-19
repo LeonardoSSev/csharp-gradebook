@@ -26,6 +26,28 @@ namespace GradeBook
             return 1;
         }
 
+        public void AddLetterGrade(char gradeLetter)
+        {
+            switch(gradeLetter)
+            {
+                case var letter when letter.Equals("A"):
+                    this.AddGrade(10.0);
+                    break;
+                case var letter when letter.Equals("B"):
+                    this.AddGrade(9.0);
+                    break;
+                case var letter when letter.Equals("C"):
+                    this.AddGrade(7.0);
+                    break;
+                case var letter when letter.Equals("D"):
+                    this.AddGrade(6.0);
+                    break;
+                default:
+                    this.AddGrade(0.0);
+                    break;
+            }
+        }
+
         public Statistics GetStatistics()
         {
             var statistics = new Statistics();
